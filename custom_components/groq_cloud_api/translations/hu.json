@@ -1,0 +1,39 @@
+{
+    "config": {
+      "step": {
+        "user": {
+          "data": {
+            "api_key": "API kulcs"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Nem lehet csatlakozni a szolgáltatáshoz",
+        "invalid_auth": "Érvénytelen hitelesítés",
+        "unknown": "Ismeretlen hiba"
+      }
+    },
+    "options": {
+      "step": {
+        "init": {
+          "data": {
+            "prompt": "Utasítások",
+            "chat_model": "Chat modell",
+            "max_tokens": "Válaszban visszatérítendő maximális tokenek száma",
+            "temperature": "Hőmérséklet",
+            "top_p": "Top P",
+            "llm_hass_api": "Home Assistant LLM API",
+            "recommended": "Ajánlott modellbeállítások"
+          },
+          "data_description": {
+            "prompt": "Add meg, hogy LLM hogyan reagáljon. Ez egy sablon is lehet."
+          }
+        }
+      }
+    },
+    "exceptions": {
+      "invalid_config_entry": {
+        "message": "Érvénytelen beállítás megadva. Ezt kaptam: {config_entry}"
+      }
+    }
+  }

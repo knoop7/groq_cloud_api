@@ -1,0 +1,18 @@
+{
+  "domain": "groq_cloud_api",
+  "name": "Groq Cloud API",
+  "version": "0.2.0",
+  "codeowners": ["@KNOOP"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/KNOOP/ha-groq-cloud-api",
+  "issue_tracker": "https://github.com/KNOOP/ha-groq-cloud-api/issues",
+  "homekit": {},
+  "iot_class": "cloud_polling",
+  "requirements": [
+    "aiohttp", 
+    "aiohttp_proxy"  
+  ],
+  "ssdp": [],
+  "zeroconf": []
+}
