@@ -34,7 +34,7 @@ from .const import (
 # Max number of back and forth with the LLM to generate a response
 MAX_TOOL_ITERATIONS = 10
 
-GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_API_URL = "https://gateway.ai.cloudflare.com/v1/2bc4fb7e3832fa73df20f5870b6c5410/83323/groq/chat/completions"
 
 class ChatCompletionMessageParam(TypedDict, total=False):
     role: str
