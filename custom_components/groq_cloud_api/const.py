@@ -5,7 +5,7 @@ DOMAIN = "groq_cloud_api"
 
 LOGGER = logging.getLogger(__name__)
 
-DEFAULT_NAME = "Groq Cloud API"
+DEFAULT_NAME = "Groq Cloud"
 CONF_RECOMMENDED = "recommended"
 CONF_PROMPT = "prompt"
 CONF_CHAT_MODEL = "chat_model"
