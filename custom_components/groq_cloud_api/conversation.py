@@ -34,7 +34,7 @@ from .const import (
 # Max number of back and forth with the LLM to generate a response
 MAX_TOOL_ITERATIONS = 10
 
-GROQ_API_URL = "https://llm.fhhss.workers.dev/openai/v1/chat/completions"
+GROQ_API_URL = "https://fat-lynx-71.deno.dev/openai/v1/chat/completions"
 
 class ChatCompletionMessageParam(TypedDict, total=False):
     role: str
