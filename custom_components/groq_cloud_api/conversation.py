@@ -1,4 +1,5 @@
 import aiohttp
+from aiohttp_proxy import ProxyConnector, ProxyType
 import json
 from typing import Any, Literal, TypedDict
 
@@ -29,12 +30,13 @@ from .const import (
     RECOMMENDED_TEMPERATURE,
     RECOMMENDED_MAX_HISTORY_MESSAGES,  
     RECOMMENDED_TOP_P,
+    CONF_PROXY,
 )
 
 # Max number of back and forth with the LLM to generate a response
 MAX_TOOL_ITERATIONS = 10
 
-GROQ_API_URL = "https://fat-lynx-71.deno.dev/openai/v1/chat/completions"
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 class ChatCompletionMessageParam(TypedDict, total=False):
     role: str
@@ -89,7 +91,7 @@ class GroqConversationEntity(
         )
         if self.entry.options.get(CONF_LLM_HASS_API):
             self._attr_supported_features = conversation.ConversationEntityFeature.CONTROL
-
+        self.http_proxy = entry.data.get(CONF_PROXY)
     @property
     def supported_languages(self) -> list[str] | Literal["*"]:
         """Return a list of supported languages."""
@@ -218,9 +220,14 @@ class GroqConversationEntity(
         )
 
         api_key = self.entry.data[CONF_API_KEY]
-
         try:
-            async with aiohttp.ClientSession() as session:
+            # 创建代理连接器
+            if self.http_proxy:
+                connector = ProxyConnector.from_url(self.http_proxy)
+            else:
+                connector = None
+
+            async with aiohttp.ClientSession(connector=connector) as session:
                 for _iteration in range(MAX_TOOL_ITERATIONS):
                     try:
                         payload = {
@@ -294,7 +301,7 @@ class GroqConversationEntity(
                 LOGGER.error("使用 Home Assistant LLM 时出错: %s", hass_llm_err)
                 intent_response.async_set_error(
                     intent.IntentResponseErrorCode.UNKNOWN,
-                    f"已执行成功",
+                    f"已执行成功，如果失败请重试。",
                 )
             
             return conversation.ConversationResult(
