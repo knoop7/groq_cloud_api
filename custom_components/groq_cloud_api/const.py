@@ -1,11 +1,10 @@
-
 import logging
 
 DOMAIN = "groq_cloud_api"
 
 LOGGER = logging.getLogger(__name__)
 
-DEFAULT_NAME = "Groq Cloud"
+DEFAULT_NAME = "Groq Cloud API"
 CONF_RECOMMENDED = "recommended"
 CONF_PROMPT = "prompt"
 CONF_CHAT_MODEL = "chat_model"
@@ -18,3 +17,4 @@ CONF_TEMPERATURE = "temperature"
 RECOMMENDED_TEMPERATURE = 1.0
 CONF_MAX_HISTORY_MESSAGES = "max_history_messages"
 RECOMMENDED_MAX_HISTORY_MESSAGES = 5
+CONF_PROXY = "代理服务器地址（可选)"
