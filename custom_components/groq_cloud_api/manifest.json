@@ -5,13 +5,13 @@
   "codeowners": ["@KNOOP"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/KNOOP/ha-groq-cloud-api",
-  "issue_tracker": "https://github.com/KNOOP/ha-groq-cloud-api/issues",
+  "documentation": "https://github.com/knoop7/groq_cloud_api",
+  "issue_tracker": "https://github.com/knoop7/groq_cloud_api",
   "homekit": {},
   "iot_class": "cloud_polling",
   "requirements": [
     "aiohttp", 
-    "aiohttp_proxy"  
+    "aiohttp_proxy"
   ],
   "ssdp": [],
   "zeroconf": []
