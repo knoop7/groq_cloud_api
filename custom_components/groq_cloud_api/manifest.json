@@ -2,7 +2,7 @@
   "domain": "groq_cloud_api",
   "name": "Groq Cloud API",
   "version": "1.0",
-  "codeowners": ["@KNOOP"],
+  "codeowners": ["@knoop7"],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/knoop7/groq_cloud_api",
